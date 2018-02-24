@@ -1,10 +1,10 @@
 import * as React from 'react'
-import './app.css'
+import './layout.css'
 
 const bear = require('./bear.jpg')
 const logo = require('./logo.svg')
 
-class App extends React.Component<any, any> {
+class Layout extends React.Component<any, any> {
   render() {
     console.log(this.props)
     const myImg = <img src={bear} />
@@ -23,4 +23,4 @@ class App extends React.Component<any, any> {
   }
 }
 
-export default App
+export default Layout
