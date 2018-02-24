@@ -1,23 +1,30 @@
 import * as React from 'react'
+import Header from '../components/header/header'
 import './layout.css'
 
-const bear = require('./bear.jpg')
-const logo = require('./logo.svg')
-
 class Layout extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      name: 'Q',
+      isLoading: true
+    }
+    setTimeout(() => {
+      this.setState({
+        name: 'Q v2',
+        isLoading: false
+      })
+    }, 5000)
+  }
+
   render() {
-    console.log(this.props)
-    const myImg = <img src={bear} />
+    this.props.dataProvider.hello()
+    const { name } = this.state
+    const yo = () => { console.log('yo') }
+    const content = <Header name={name} onClick={yo}/>
     return (
       <div className="App">
-        <header className="App-header">
-          {myImg}
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        {content}
       </div>
     )
   }
