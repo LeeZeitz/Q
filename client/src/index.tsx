@@ -7,4 +7,6 @@ import dataProvider from './providers'
 const provider = dataProvider('http://localhost')
 console.log(provider)
 
-ReactDOM.render(<Layout dataProvider={provider} />, document.getElementById('root') as HTMLElement)
+ReactDOM.render(<Layout dataProvider={provider} />, document.getElementById(
+  'root'
+) as HTMLElement)

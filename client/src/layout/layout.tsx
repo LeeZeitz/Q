@@ -20,13 +20,11 @@ class Layout extends React.Component<any, any> {
   render() {
     this.props.dataProvider.hello()
     const { name } = this.state
-    const yo = () => { console.log('yo') }
-    const content = <Header name={name} onClick={yo}/>
-    return (
-      <div className="App">
-        {content}
-      </div>
-    )
+    const yo = () => {
+      console.log('yo')
+    }
+    const content = <Header name={name} onClick={yo} />
+    return <div className="App">{content}</div>
   }
 }
 
