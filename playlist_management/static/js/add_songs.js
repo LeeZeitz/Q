@@ -33,7 +33,7 @@ function add_song(track_id) {
     refreshCSRFToken();
     $.ajax({
         type: 'POST',
-        url: 'songs/add_songs',
+        url: '/songs/add_songs',
         data: {
             'track_id': track_id
         },
@@ -46,6 +46,16 @@ function add_song(track_id) {
 
 $(':button').click(function (event) {
     if (event.currentTarget.id != 'search') {
+        $(this).closest('div.song-list').css('background-color', '#25CFED').css('border-radius', '15px');
+        $(this).hide();
         add_song(event.currentTarget.id);
     }
+});
+
+$('#burger').click(function (event) {
+    document.getElementById("mySidenav").style.width = "50%";
+});
+
+$('.closebtn').click(function (event) {
+    document.getElementById("mySidenav").style.width = "0";
 });

@@ -17,25 +17,11 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-        <form id="song-search-form" method="post">
-            {% csrf_token %}
-            {% for field in form %}
-                {{ field }}
-            {% endfor %}
-            <button type="submit" id="search" class="btn">
-                <span class="glyphicon glyphicon-search"></span>
-            </button>
-        </form>
-    </div>
     <div id="results">
-        {% for result in results %}
+        {% for result in tracks %}
             <div class="row song-list">
                 <div class="col align-self-start track">
                     <span>{{ result.track_name }}</span>
-                    {% if result.explicit %}
-                        <span class="explicit">Explicit</span>
-                    {% endif %}
                 </div>
                 <div class="col-sm-11 align-self-center justify-content-center artist">
                     {% for artist in result.artists %}
@@ -47,21 +33,9 @@
                     {% endfor %}
                     <span>- {{ result.album_name }}</span>
                 </div>
-                <div class='col align-self-center justify-content-right'>
-                    <button class="add-btn" type="button" id="{{ result.track_id }}">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </button>
-                </div>
             </div>
             <hr>
         {% endfor %}
     </div>
-    <div class="alert alert-success alert__hidden" id="song-added-alert">
-        <span>song added to queue</span>
-    </div>
 </div>
-{% endblock %}
-
-{% block js %}
-    <script src="{% static "js/add_songs.js" %}"></script>
 {% endblock %}

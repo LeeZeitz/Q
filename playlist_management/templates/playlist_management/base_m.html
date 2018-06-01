@@ -27,15 +27,27 @@
 
 	<!-- Static navbar -->
 	<nav class="navbar navbar-default navbar-inverse navbar-static-top">
-		<div class="container">
+		<div class="container-fluid">
 			<div id="navbar" class="navbar-collapse collapse">
-                <h1 class="title">Q</h1>
+				<div id="mySidenav" class="sidenav">
+						<a href="javascript:void(0)" class="closebtn">&times;</a>
+						<hr>
+						<a href="/songs">Add Songs</a>
+						<hr>
+						<a href="/songs/playlist">View Playlist</a>
+						<hr>
+				</div>
+				<span id="burger" style="background-color:transparent; border: none; font-size:80px;cursor:pointer; float:left; padding-left:15px;">&#9776;</span>
+				<h1 class="title">Q</h1>
+				</div>
 			</div>
 		</div>
     </nav>
     
 	{% block content %}{% endblock %}
 	
-	{% block js %}{% endblock %}
+	{% block js %}
+		<script src="{% static "js/add_songs.js" %}"></script>
+	{% endblock %}
 
 </html>

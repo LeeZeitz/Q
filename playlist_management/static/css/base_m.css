@@ -28,6 +28,7 @@ body {
 .title {
     color: white;
     font-size: 100px;
+    margin: auto;
 }
 
 p {
@@ -36,4 +37,12 @@ p {
 
 * {
     color: white;
+}
+
+h1 {
+    width: 50%;
+}
+
+.closebtn {
+    font-size: 60px;
 }
