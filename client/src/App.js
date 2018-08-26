@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { subscribeToPlaylist } from './api';
 import Playlist from './components/playlistManagement/playlist';
 
 class App extends Component {
