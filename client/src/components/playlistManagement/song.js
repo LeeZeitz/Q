@@ -1,15 +1,5 @@
 import React from 'react';
 
-/*
-listSongs = (songs) => {
-
-    songs.forEach
-    return (
-
-    )
-}
-*/
-
 const Song = (props) => {
     let song = props.song;
     let result;
@@ -17,7 +7,7 @@ const Song = (props) => {
     if (song !== undefined)
     {
         result = (
-            <div>
+            <div className='song-row'>
                 <div className='row'>
                     <div className='col-11 song-title'>
                         <span>
@@ -26,8 +16,16 @@ const Song = (props) => {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-6'>
-                        { song.artists[0] }
+                    <div className='col-12 song-info-row'>
+                        <span className='song-info'>
+                            { song.artists[0] }
+                        </span>
+                        <span className='song-info-seperator'>
+                            -
+                        </span>
+                        <span className='song-info'>
+                            { song.album }
+                        </span>
                     </div>
                 </div>
             </div>

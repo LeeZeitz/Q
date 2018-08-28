@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = (props) => {
+const Header = (props) => {
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <div className="collapse navbar-collapse justify-content-center">
@@ -14,4 +14,4 @@ const Navbar = (props) => {
     );
 };
 
-export default Navbar;
+export default Header;
