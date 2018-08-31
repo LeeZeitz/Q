@@ -2,13 +2,9 @@ import React from 'react';
 
 const Header = (props) => {
     return (
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar-dark bg-dark header-title">
             <div className="collapse navbar-collapse justify-content-center">
-                <ul className="navbar-nav">
-                <li className="nav-item active">
-                    <span className="header-title">Q</span>
-                </li>
-                </ul>
+                <span className="header-title">Q</span>
             </div>
         </nav>
     );

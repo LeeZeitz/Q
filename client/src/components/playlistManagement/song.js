@@ -1,4 +1,9 @@
 import React from 'react';
+import { subscribeToAddSong } from '../../api';
+
+const handleMessage = (message) => {
+    console.log(message);
+}
 
 const Song = (props) => {
     let song = props.song;
@@ -13,6 +18,9 @@ const Song = (props) => {
                         <span>
                             { song.name }
                         </span>
+                    </div>
+                    <div>
+                        { props.add && <span id={ song.id } className="oi oi-plus" title="plus" aria-hidden="true" onClick={ (e) => subscribeToAddSong(e.target.id, handleMessage) } /> }
                     </div>
                 </div>
                 <div className='row'>
