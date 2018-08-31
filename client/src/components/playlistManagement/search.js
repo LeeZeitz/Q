@@ -33,8 +33,8 @@ class Search extends Component {
         return (
             <div>
                 <form>
-                    <input type='text' name='search' placeholder='Search' className='search-bar' onChange={ (e) => this.changeSearchTerm(e.target.value) } onKeyPress={ this.handleKeyPress } />
-                    <span className="oi oi-magnifying-glass yolo" title="magnifying-glass" aria-hidden="true" onClick= { () => searchSong(this.state.searchTerm, this.dispalyResults) } ></span>
+                    <input type='text' name='search' placeholder='Search' className='search-bar' autoComplete="off" onChange={ (e) => this.changeSearchTerm(e.target.value) } onKeyPress={ this.handleKeyPress } />
+                    <span className="oi oi-magnifying-glass search-bar-icon" title="magnifying-glass" aria-hidden="true" onClick= { () => searchSong(this.state.searchTerm, this.dispalyResults) } ></span>
                     <div>
                         { this.state.results } 
                     </div>
