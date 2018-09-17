@@ -1,7 +1,7 @@
 import openSocket from 'socket.io-client';
 import axios from 'axios';
 
-const socket = openSocket('http://192.168.1.130:8080');
+const socket = openSocket('http://192.168.1.71:8080');
 
 const subscribeToPlaylist = (cb) => {
     socket.on('playlist', playlist => cb(!playlist, playlist));
@@ -10,20 +10,22 @@ const subscribeToPlaylist = (cb) => {
 
 const subscribeToAddSong = (songId, cb) => {
 
-    socket.on('addSong', message => cb(message));
-    socket.emit('subscribeToAddSong', songId);
-
-    /*
+    //socket.on('addSong', message => cb(message));
+    //socket.emit('subscribeToAddSong', songId);
+    
     axios.post('/api/add_song', {songId: songId})
         .then(response => {
-            console.log(response.status);
-            console.log(response.data);
             cb(response.data);
         })
         .catch(err => {
             console.log(err);
         });
-    */
+    
+};
+
+const subscribeToPlayback = (cb) => {
+    socket.on('playback', playback => cb(playback));
+    socket.emit('subscribeToPlayback');
 };
 
 const resetCredentials = (cb) => {
@@ -47,4 +49,4 @@ const searchSong = (searchTerm, cb) => {
 };
 
 
-export { subscribeToPlaylist, subscribeToAddSong, resetCredentials, searchSong };
+export { subscribeToPlaylist, subscribeToPlayback, subscribeToAddSong, resetCredentials, searchSong };
